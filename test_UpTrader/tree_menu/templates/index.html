@@ -1,0 +1,27 @@
+{% load custom_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Меню</title>
+    <style>
+        .hover {
+            display: none;
+        }
+        .first_hover:hover .hover {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    {% draw_menu 'main_menu' %}
+    <script>
+        const firstElement = document.querySelector('.hover');
+        if (firstElement) {
+            firstElement.classList.remove('hover');
+            firstElement.classList.add('first_hover')
+        }
+    </script>
+</body>
+</html>
